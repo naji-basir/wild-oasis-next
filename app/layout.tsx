@@ -1,11 +1,15 @@
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+import Navigations from "./components/Navigations";
+import { ReactNode } from "react";
+
+function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html>
+      <body>
+        <Navigations />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
+
+export default RootLayout;
